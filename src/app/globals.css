@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-kertas: #eef1ef;
+  --color-permukaan: #ffffff;
+  --color-tinta: #16211d;
+  --color-samar: #5d6b65;
+  --color-garis: #d7ded9;
+  --color-aksen: #11594a;
+  --color-stabilo: #f7e9b0;
+  --color-bahaya: #9a3412;
+
+  --font-ui: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-baca: "Newsreader", Georgia, serif;
+  --font-data: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  background: var(--color-kertas);
+  color: var(--color-tinta);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+}
+
+::selection {
+  background: var(--color-stabilo);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-aksen);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

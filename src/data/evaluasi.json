@@ -1,0 +1,122 @@
+[
+  {
+    "id": "cuti-01",
+    "pertanyaan": "Berapa hari cuti tahunan yang saya dapat?",
+    "kunci": ["12"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "cuti-02",
+    "pertanyaan": "Kapan sisa cuti tahunan saya hangus?",
+    "kunci": ["31 Maret"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "cuti-03",
+    "pertanyaan": "Berapa lama cuti untuk ayah yang mendampingi istri melahirkan?",
+    "kunci": ["2"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "kerja-01",
+    "pertanyaan": "Jam berapa jam kerja dimulai dan berakhir?",
+    "kunci": ["08.00"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "kerja-02",
+    "pertanyaan": "Berapa toleransi keterlambatan per hari?",
+    "kunci": ["15"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "wfh-01",
+    "pertanyaan": "Berapa hari maksimal saya boleh kerja dari rumah dalam seminggu?",
+    "kunci": ["2"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "lembur-01",
+    "pertanyaan": "Bagaimana perhitungan upah lembur?",
+    "kunci": ["1,5"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "lembur-02",
+    "pertanyaan": "Berapa batas maksimal lembur per hari?",
+    "kunci": ["3"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "sehat-01",
+    "pertanyaan": "Berapa plafon biaya rawat jalan per tahun?",
+    "kunci": ["5.000.000"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "sehat-02",
+    "pertanyaan": "Berapa batas waktu pengajuan klaim kesehatan?",
+    "kunci": ["30"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "dinas-01",
+    "pertanyaan": "Berapa uang harian perjalanan dinas dalam negeri?",
+    "kunci": ["250.000"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "dinas-02",
+    "pertanyaan": "Berapa batas biaya hotel saat perjalanan dinas?",
+    "kunci": ["600.000"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "gaji-01",
+    "pertanyaan": "Tanggal berapa gaji dibayarkan?",
+    "kunci": ["25"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "gaji-02",
+    "pertanyaan": "Bulan apa bonus tahunan dibayarkan?",
+    "kunci": ["Februari"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "latih-01",
+    "pertanyaan": "Berapa anggaran pelatihan per karyawan setiap tahun?",
+    "kunci": ["3.000.000"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "sanksi-01",
+    "pertanyaan": "Berapa lama surat peringatan berlaku?",
+    "kunci": ["6"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "resign-01",
+    "pertanyaan": "Berapa hari sebelumnya saya harus mengajukan pengunduran diri?",
+    "kunci": ["30"],
+    "jenis": "terjawab"
+  },
+  {
+    "id": "luar-01",
+    "pertanyaan": "Berapa harga saham perusahaan hari ini?",
+    "kunci": [],
+    "jenis": "diluar"
+  },
+  {
+    "id": "luar-02",
+    "pertanyaan": "Bagaimana cara mengurus paspor di kantor imigrasi?",
+    "kunci": [],
+    "jenis": "diluar"
+  },
+  {
+    "id": "luar-03",
+    "pertanyaan": "Apakah perusahaan menyediakan tunjangan kendaraan dinas pribadi?",
+    "kunci": [],
+    "jenis": "diluar"
+  }
+]
