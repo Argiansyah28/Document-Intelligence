@@ -2,6 +2,28 @@
 
 Asisten dokumen internal yang menjawab pertanyaan karyawan berdasarkan isi dokumen perusahaan, lengkap dengan sitasi halaman, dan menolak menjawab ketika informasinya tidak ada.
 
+## Menjalankan
+
+Butuh Node.js 20 atau lebih baru.
+
+```bash
+npm install
+cp .env.example .env
+```
+
+Isi `.env`:
+
+- `DATABASE_URL` — buat database gratis di [neon.tech](https://neon.tech), salin connection string
+- `GOOGLE_API_KEY` — ambil di [aistudio.google.com](https://aistudio.google.com/apikey), gratis
+
+```bash
+npm run db:setup
+npm run db:seed
+npm run dev
+```
+
+Buka `http://localhost:3000`, lalu jalankan pengukuran di `http://localhost:3000/evaluasi`.
+
 ## Masalah
 
 Bagian HR dan IT menerima pertanyaan yang sama berulang kali — cuti, lembur, klaim kesehatan, perjalanan dinas. Jawabannya sudah tertulis di dokumen peraturan, tetapi dokumen itu panjang dan jarang dibuka.
@@ -84,32 +106,6 @@ scripts/
   setup.ts         Membuat tabel dan indeks
   seed.ts          Memasukkan dokumen contoh
 ```
-
-## Menjalankan
-
-Butuh Node.js 20 atau lebih baru.
-
-```bash
-npm install
-cp .env.example .env
-```
-
-Isi `.env`:
-
-- `DATABASE_URL` — buat database gratis di [neon.tech](https://neon.tech), salin connection string
-- `GOOGLE_API_KEY` — ambil di [aistudio.google.com](https://aistudio.google.com/apikey), gratis
-
-```bash
-npm run db:setup
-npm run db:seed
-npm run dev
-```
-
-Buka `http://localhost:3000`, lalu jalankan pengukuran di `http://localhost:3000/evaluasi`.
-
-## Deploy
-
-Dorong ke GitHub, hubungkan repo di [vercel.com](https://vercel.com), tambahkan `DATABASE_URL` dan `GOOGLE_API_KEY` sebagai environment variable, lalu deploy. Setelah live, jalankan `npm run db:setup` dan `npm run db:seed` sekali dari komputer lokal dengan `.env` yang menunjuk database yang sama.
 
 ## Keterbatasan
 
