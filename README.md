@@ -1,4 +1,4 @@
-# Tanya Dokumen
+# Tanya Dokumen (Upload Dokumen -> Tinggal Bertanya -> Langsung Dijawab)
 
 Asisten dokumen internal yang menjawab pertanyaan karyawan berdasarkan isi dokumen perusahaan, lengkap dengan sitasi halaman, dan menolak menjawab ketika informasinya tidak ada.
 
@@ -23,6 +23,13 @@ npm run dev
 ```
 
 Buka `http://localhost:3000`, lalu jalankan pengukuran di `http://localhost:3000/evaluasi`.
+
+## Halaman Tanya Dokumen
+<img width="741" height="641" alt="image" src="https://github.com/user-attachments/assets/b07cdcb5-6eda-4cca-918f-b4dce67dc30b" />
+
+## Halaman Upload Dokumen
+<img width="702" height="568" alt="image" src="https://github.com/user-attachments/assets/edfd7f7d-fac3-4c2d-8929-d0b1834093a5" />
+
 
 ## Masalah
 
