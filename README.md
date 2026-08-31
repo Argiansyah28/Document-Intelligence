@@ -25,7 +25,8 @@ npm run dev
 Buka `http://localhost:3000`, lalu jalankan pengukuran di `http://localhost:3000/evaluasi`.
 
 ## Halaman Tanya Dokumen
-<img width="741" height="641" alt="image" src="<img width="889" height="628" alt="attendance" src="https://github.com/user-attachments/assets/bed8d113-0f3f-4448-817c-0de94d355f53" />
+<img width="741" height="641" alt="image" src="<img width="889" height="628" alt="attendance" src="<img width="2926" height="1674" alt="Document-Intelligence" src="https://github.com/user-attachments/assets/2c2b8481-46ce-4820-8b40-e02be93321ff" />
+" />
 " />
 
 ## Masalah
