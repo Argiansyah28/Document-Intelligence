@@ -1,4 +1,4 @@
-# Tanya Dokumen (Upload Dokumen -> Tinggal Bertanya -> Langsung Dijawab)
+# Document Intelligence (Upload Dokumen -> Tinggal Bertanya -> Langsung Dijawab)
 
 Asisten dokumen internal yang menjawab pertanyaan karyawan berdasarkan isi dokumen perusahaan, lengkap dengan sitasi halaman, dan menolak menjawab ketika informasinya tidak ada.
 
@@ -37,46 +37,7 @@ Bagian HR dan IT menerima pertanyaan yang sama berulang kali — cuti, lembur, k
 
 Chatbot biasa tidak menyelesaikan masalah ini karena ia bisa mengarang jawaban, dan jawaban HR yang salah berakibat pada uang dan kepatuhan. Sistem ini dirancang dengan satu syarat utama: **setiap jawaban harus bisa ditelusuri ke halaman sumbernya, dan ketidaktahuan harus dinyatakan secara eksplisit.**
 
-## Hasil pengukuran
 
-Diukur pada 20 kasus uji (17 pertanyaan terjawab, 3 pertanyaan di luar dokumen):
-
-| Metrik | Arti |
-|---|---|
-| Jawaban benar | Kata kunci jawaban yang benar muncul di jawaban |
-| Retrieval tepat | Potongan yang diambil memang memuat jawabannya |
-| Penolakan tepat | Sistem menolak menjawab saat informasi tidak ada |
-| Latensi p95 | 95% pertanyaan dijawab lebih cepat dari angka ini |
-
-Angka aktual dihasilkan dengan menjalankan halaman `/evaluasi`, dan setiap hasil pengukuran tersimpan di database sebagai riwayat sehingga perubahan prompt atau parameter bisa dibandingkan.
-
-## Arsitektur
-
-```
-FASE 1 — INDEXING
-
-  PDF / Markdown / TXT
-        │
-        ▼  unpdf, teks diambil per halaman
-  Potong 800 huruf, tindih 150, dipotong di batas kalimat
-        │
-        ▼  Gemini text-embedding-004, taskType RETRIEVAL_DOCUMENT
-  Simpan ke Postgres (pgvector) bersama nomor halaman
-
-
-FASE 2 — RETRIEVAL & GENERATION
-
-  Pertanyaan
-        │
-        ├─► Pencarian vektor       cosine distance, indeks HNSW      → 20 kandidat
-        └─► Pencarian kata kunci   tsvector + ts_rank, indeks GIN    → 20 kandidat
-                    │
-                    ▼  Reciprocal Rank Fusion (k = 60)
-              5 potongan terbaik
-                    │
-                    ▼  prompt terkunci konteks, temperature 0
-        Jawaban bersitasi [1][2] atau TIDAK DITEMUKAN
-```
 
 ### Keputusan teknis
 
@@ -88,31 +49,7 @@ FASE 2 — RETRIEVAL & GENERATION
 
 **Evaluasi dijalankan dari sisi klien.** Setiap kasus uji memanggil endpoint yang sama dengan pengguna biasa, sehingga angka yang terukur adalah angka jalur produksi, bukan jalur khusus pengujian. Ini juga menghindari batas waktu eksekusi fungsi serverless.
 
-## Struktur
 
-```
-src/
-  lib/
-    berkas.ts      Membaca PDF dan teks menjadi daftar halaman
-    potong.ts      Pemotongan dengan tindihan di batas kalimat
-    gemini.ts      Klien embedding dan pembuatan jawaban
-    dokumen.ts     Simpan, daftar, hapus dokumen
-    pencarian.ts   Hybrid search dan Reciprocal Rank Fusion
-    jawaban.ts     Penyusunan prompt dan alur menjawab
-    skor.ts        Penilaian evaluasi, murni tanpa efek samping
-    db.ts          Koneksi Neon
-  app/
-    page.tsx       Halaman tanya jawab
-    dokumen/       Pengelolaan dokumen
-    evaluasi/      Penjalan dan riwayat evaluasi
-    api/           Endpoint tanya, dokumen, evaluasi
-  data/
-    peraturan-perusahaan.md   Dokumen contoh
-    evaluasi.json             20 kasus uji
-scripts/
-  setup.ts         Membuat tabel dan indeks
-  seed.ts          Memasukkan dokumen contoh
-```
 
 ## Keterbatasan
 
